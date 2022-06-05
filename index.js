@@ -11,11 +11,12 @@ const dates = [
 const createDate = (date, index) => {
   const newDate = [];
   for(let i = 0; i < date.lenght; i++) {
-    newDate[i] = (new Date(date[i]).getTime() / 1000).toString();
-  }
-  if(typeof index === "undefined") {
-    const sortDate = newDate.sort((a, b) => (a-b)).join("-");
-    return sortDate;
+    const result = (new Date(date[i]).getTime() / 1000).toString();
+    newDate.push(result);
+  };
+  if(index === undefined) {
+    newDate.sort((a, b) => a-b);
+    return newDate.join("-");
   }
   else{
     return newDate[index];
