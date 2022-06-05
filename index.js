@@ -10,20 +10,18 @@ const dates = [
 // TODO: Buatlah fungsi createDate
 const createDate = (date, index) => {
   const newDate = [];
-  for(let i = 0; i < date.lenght; i++) {
-    const result = (new Date(date[i]).getTime() / 1000).toString();
-    newDate.push(result);
-  };
-  if(index === undefined) {
-    newDate.sort((a, b) => a-b);
-    return newDate.join("-");
-  }
-  else{
-    return newDate[index];
-  }
+    for (let i = 0; i < date.length; i++) {
+      const result = (new Date(date[i]).getTime() / 1000).toString();
+      newDate.push(result);
+    };
+    if (index === undefined){
+      newDate.sort((a, b) => a - b);
+        return newDate.join("-");
+    }else {
+      newDate.sort((a, b) => a + b);
+      return newDate[index];
+    }
 };
-
-
 // ! JANGAN DIMODIFIKASI
 (() => {
   // IIFE
